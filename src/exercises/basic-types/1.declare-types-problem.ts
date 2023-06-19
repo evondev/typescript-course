@@ -1,12 +1,26 @@
-const language = "Typescript";
-type Language = typeof language;
+const language: string = "Typescript";
+type Language = unknown;
 // expect type Language = string;
 
-const isdeveloper = false;
-type IsDeveloper = typeof isdeveloper;
+const isDeveloper: boolean = false;
+type IsDeveloper = unknown;
 // expect type IsDeveloper = boolean;
 
-const age = 30;
-type Age = typeof age;
+const age: number = 30;
+type Age = unknown;
 // expect type Age = number;
+
+const complexObj = {
+  javascript: {
+    label: "Javascript",
+  },
+  typescript: {
+    label: "Typescript",
+  },
+  reactjs: {
+    label: "Reactjs",
+  },
+};
+type ComplexObj = unknown;
+// Expected: type ComplexObj = "javascript" | "typescript" | "reactjs"
 export {};
