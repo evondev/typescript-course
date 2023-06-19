@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "evondev",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
