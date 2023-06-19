@@ -4,6 +4,7 @@ export const notification = {
   ALERT: "alert",
   WARNING: "warning",
   DANGER: "danger",
-};
-type NotifcationAlert = unknown;
-type tests = [Expect<Equal<NotifcationAlert, "alert">>];
+} as const;
+
+type Notification = unknown;
+type tests = [Expect<Equal<Notification, "alert" | "warning" | "danger">>];

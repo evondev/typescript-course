@@ -1,3 +1,5 @@
+import { Equal, Expect } from "@/type-utils";
+
 export type Ranking =
   | {
       type: "best";
@@ -12,6 +14,4 @@ export type Ranking =
       award: "bronze";
     };
 type AwardType = unknown;
-/* Expected
-type AwardType = "best" | "good" | "normal"
-*/
+type tests = [Expect<Equal<AwardType, "best" | "good" | "normal">>];

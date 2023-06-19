@@ -1,3 +1,5 @@
+import { Equal, Expect } from "@/type-utils";
+
 export type Ranking =
   | {
       type: "best";
@@ -12,12 +14,18 @@ export type Ranking =
       award: "bronze";
     };
 type NotRankingBest = unknown;
-/*
-type NotRankingBest = {
-    type: "good";
-    award: "Silver";
-} | {
-    type: "normal";
-    award: "bronze";
-}
-*/
+type tests = [
+  Expect<
+    Equal<
+      NotRankingBest,
+      | {
+          type: "good";
+          award: "Silver";
+        }
+      | {
+          type: "normal";
+          award: "bronze";
+        }
+    >
+  >
+];
