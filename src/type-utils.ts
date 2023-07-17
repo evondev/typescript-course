@@ -1,6 +1,6 @@
-// credit: Matt Pocock
+// credit: mattmccutchen
+// link: https://github.com/microsoft/TypeScript/issues/27024
 export type Expect<T extends true> = T;
-
 export type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <
   T
 >() => T extends Y ? 1 : 2
