@@ -1,4 +1,4 @@
-export const getDeepValue = <Obj, FirstKey extends keyof Obj, SecondKey>(
+export const getDeepValue = <Obj, FirstKey, SecondKey>(
   obj: Obj,
   firstKey: FirstKey,
   secondKey: SecondKey
