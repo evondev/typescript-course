@@ -17,10 +17,25 @@ score = "10";
 - Type `unknown` dành cho những biến hoặc params mà chúng ta chưa xác định được type rõ ràng của nó là gì
 - Sử dụng `typeof variableName` để kiểm tra type của một biến
 - Chỉ sử dụng typeof trực tiếp vào biến hoặc param, chứ không sử dụng vào Type được
-- Type `never` không gán được bất kỳ giá trị nào
+- Type `null` chỉ sử dụng được cho giá trị null
+- Type `undefined` chỉ sử dụng được cho giá trị undefined
 
 ```typescript
 type Example = {};
 typeof 10; // number
 typeof Example;
+```
+
+- Type `never` không gán được bất kỳ giá trị nào
+- Type `never` được sử dụng cho các giá trị hoặc hàm không bao giờ hoàn thành hoặc không bao giờ trả về giá trị
+
+```typescript
+function infiniteLoop(): never {
+  while (true) {
+    // Infinite loop
+  }
+}
+function throwError(message: string): never {
+  throw new Error(message);
+}
 ```
