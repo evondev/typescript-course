@@ -39,3 +39,5 @@ function throwError(message: string): never {
   throw new Error(message);
 }
 ```
+
+- Dấu ? nằm sau property nghĩa là optional(không bắt buộc)
