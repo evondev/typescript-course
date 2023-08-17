@@ -41,3 +41,8 @@ function throwError(message: string): never {
 ```
 
 - Dấu ? nằm sau property nghĩa là optional(không bắt buộc)
+- Union type |
+
+```typescript
+string | number;
+```
