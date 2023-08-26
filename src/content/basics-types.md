@@ -114,3 +114,14 @@ scores.push(6); // Error Property 'push' does not exist on type 'readonly [1, 2,
 
 - `as Type` nghĩa là chúng ta đang nói dối Typescript rằng, mày tin tao đi, tao biết nó là type gì mà
 - Có thể mở rộng Type ra hơn nhưng cũng có thể dễ gây lỗi hơn
+- `keyof` chỉ sử dụng được cho Type
+- Nếu muốn sử dụng cho biến thì biến đó phải có `typeof` trước. Ví dụ
+
+```typescript
+const complexObj = {
+  javascript: {
+    label: "Javascript",
+  },
+};
+type Keys = keyof typeof complexObj; // "javascript"
+```
