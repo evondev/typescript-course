@@ -8,8 +8,8 @@
 - Type `unknown` ✅
 - Type `void` ✅
 - Object ✅
-- Array
-- Union
-- Intersection
-- Tuple
-- Enum
+- Array ✅
+- Union ✅
+- Intersection ✅
+- Tuple ✅
+- Enum ✅
