@@ -9,10 +9,26 @@
 type GenericType<T extends ConstraintType> = ...
 ```
 
-# Conditional
+- Dưới đây là 1 bài tập lấy ra giá trị của 1 thuộc tính nào đó thuộc về object student
 
-# Mapped
-
-# Indexed
-
-# Utility
+```ts
+const student = {
+  "my-name": "evondev",
+  age: 20,
+  school: "CKC",
+  year: 1994,
+};
+// truy xuất giá trị của thuộc tính my-name của object student
+console.log(student["my-name"]);
+// đưa object student về type sử dụng typeof
+type Student = typeof student;
+// lấy ra các keys sử dụng typeof trả ra union type
+type StudentKeys = keyof Student;
+// O extends {} nghĩa là O sẽ là object
+// K extends keyof O nghĩa là K sẽ là các properties của object O
+// function trả về void nghĩa là không có return
+function logObjValue<O extends {}, K extends keyof O>(obj: O, key: K): void {
+  console.log(obj[key]);
+}
+logObjValue(student, "my-name"); // 1994
+```
