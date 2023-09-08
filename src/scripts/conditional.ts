@@ -17,3 +17,21 @@ type X = Extract<string | string[], string[]>; // string[]
 // "evondev" ["evondev"]
 type Exclude<T, U> = T extends U ? never : T;
 type Y = Exclude<string | string[], string[]>; // string
+type ReturnType<T extends (...args: any) => any> = T extends (
+  ...args: any
+) => infer ReturnValue
+  ? ReturnValue
+  : any;
+function sum(a: number, b: number): number {
+  return a + b;
+}
+// (...args: any) => number
+// (...args: any) => string
+// (...args: any) => boolean
+// (...args: any) => ReturnValue -> ReturnValue : any
+function logMyName(): string {
+  return "evondev";
+}
+// const number = 100;
+type SumF = ReturnType<typeof sum>;
+type LogMyNameF = ReturnType<typeof logMyName>;

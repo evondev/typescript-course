@@ -32,3 +32,5 @@ function logObjValue<O extends {}, K extends keyof O>(obj: O, key: K): void {
 }
 logObjValue(student, "my-name"); // 1994
 ```
+
+- `T extends (...args: any) => any` <T> sẽ tuân theo ràng buộc là 1 function, tức là truyền vào phải là function
