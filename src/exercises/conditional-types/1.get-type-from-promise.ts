@@ -8,6 +8,6 @@ type ResultY = Transform<Y>;
 
 type Transform<A> = unknown;
 type tests = [
-  Expect<Equal<ResultX, "string">>,
+  Expect<Equal<ResultX, string>>,
   Expect<Equal<ResultY, { field: number }>>
 ];
