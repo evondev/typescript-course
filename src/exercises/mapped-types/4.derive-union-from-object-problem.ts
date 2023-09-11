@@ -5,6 +5,16 @@ const fruitCount = {
 };
 
 type SingleFruitCount = unknown;
+// type SingleFruitCount =
+//   | {
+//       apple: number;
+//     }
+//   | {
+//       banana: number;
+//     }
+//   | {
+//       pear: number;
+//     };
 const singleFruitCount: SingleFruitCount = {
   banana: 12,
 };
