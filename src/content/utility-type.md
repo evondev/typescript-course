@@ -64,3 +64,88 @@ type T2 = Extract<Shape, { kind: "circle" }>;
 //   radius: number;
 // };
 ```
+
+# Required<Type>
+
+- Biến các properties trong `Type` thành bắt buộc(required)
+
+```ts
+type Books = {
+  name?: string;
+  price?: number;
+  image?: string;
+};
+type BooksRequired = Required<Books>;
+// Resulst 👇
+// type BooksRequired = {
+//   name: string;
+//   price: number;
+//   image: string;
+// };
+```
+
+# Pick<Type, Keys>
+
+- Lấy ra các `Keys` từ một Type nào đó, Keys sẽ nằm dưới dạng là union type
+
+```ts
+type BookOption = Pick<Required<Books>, "name" | "image">;
+// type BookOption = {
+//     name: string;
+//     image: string;
+// }
+const book3: BookOption = {
+  name: "Harry",
+  image: "https://source.unsplash.com/random",
+};
+```
+
+# Partial<Type>
+
+- Ngược lại với Required thì Partial sẽ biến các properties từ bắt buộc thành không bắt buộc
+
+```ts
+type Books = {
+  name?: string;
+  price?: number;
+  image?: string;
+};
+type BooksRequired = Required<Books>;
+const book4: Partial<BooksRequired> = {};
+```
+
+# Readonly<Type>
+
+- Thay đổi các properties trong Type thành readonly(chỉ đọc), không được thay đổi giá trị
+
+```ts
+const book5: Readonly<Books> = {
+  name: "Harry potter",
+};
+// ❌ Error: Cannot assign to 'name' because it is a read-only property.ts(2540)
+book5.name = "evondev";
+```
+
+# Record<Keys, Type>
+
+- Giúp chúng ta tạo ra object có các keys và Type tương ứng
+
+```ts
+type CatObj = Record<
+  "boo" | "baa",
+  {
+    name: string;
+    age: number;
+  }
+>;
+const myCat: CatObj = {
+  boo: {
+    name: "boo",
+    age: 1,
+  },
+  baa: {
+    name: "boo",
+    age: 1,
+  },
+};
+```
