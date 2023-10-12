@@ -100,6 +100,20 @@ const book3: BookOption = {
 };
 ```
 
+# Omit<Type, Keys>
+
+- Ngược lại với Pick, Omit loại ra các `Keys` từ một Type nào đó, Keys sẽ nằm dưới dạng là union type
+
+```ts
+type BookOption = Omit<Required<Books>, "name" | "image">;
+// type BookOption = {
+//     price: number;
+// }
+const book3: BookOption = {
+  price: 1000,
+};
+```
+
 # Partial<Type>
 
 - Ngược lại với Required thì Partial sẽ biến các properties từ bắt buộc thành không bắt buộc

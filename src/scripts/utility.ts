@@ -44,4 +44,11 @@ const myCat: CatObj = {
     age: 1,
   },
 };
+// 6: Omit<Type, Keys>
+type BookOption2 = Omit<Required<Books>, "name" | "image">;
+const book6: BookOption2 = {
+  price: 1000,
+  // ❌ image: ""
+};
+
 export {};
