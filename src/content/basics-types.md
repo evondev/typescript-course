@@ -114,6 +114,19 @@ scores.push(6); // Error Property 'push' does not exist on type 'readonly [1, 2,
 
 - `as Type` nghĩa là chúng ta đang nói dối Typescript rằng, mày tin tao đi, tao biết nó là type gì mà
 - Có thể mở rộng Type ra hơn nhưng cũng có thể dễ gây lỗi hơn
+- Tuples type là type được xác định trước độ dài và type cho từng index cụ thể
+- Không sử dụng được `as const` cho Tuples
+- Để Tuples chỉ đọc thì thêm từ khóa `readonly` ở phía trước
+
+```typescript
+const information: readonly [
+  count: number,
+  username: string,
+  isAdmin: boolean
+] = [100, "200", false];
+information.push(100); // Error cause readonly
+```
+
 - `keyof` chỉ sử dụng được cho Type
 - Nếu muốn sử dụng cho biến thì biến đó phải có `typeof` trước. Ví dụ
 
